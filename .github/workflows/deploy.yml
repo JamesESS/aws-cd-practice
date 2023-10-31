@@ -7,11 +7,18 @@ on:
 
 jobs:
   deploy:
+    name: Deploy app
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18.16.0' 
+
 
       - name: Set up AWS CLI
         uses: aws-actions/configure-aws-credentials@v1
@@ -22,7 +29,3 @@ jobs:
 
       - name: Build Gatsby site
         run: npm run deploy
-        working-directory: ./path/to/your/gatsby/project
-
-      - name: Sync website to S3
-        run: aws s3 sync ./path/to/your/gatsby/project/public/ s3://your-s3-bucket-name
