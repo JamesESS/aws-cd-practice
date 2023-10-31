@@ -6,7 +6,7 @@
 <h1 align="center">
   Gatsby Minimal Starter
 </h1>
-
+http://gatsby-static-site.s3-website.eu-west-2.amazonaws.com/
 ## 🚀 Quick start
 
 1.  **Create a Gatsby site.**
